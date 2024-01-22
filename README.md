@@ -6,6 +6,10 @@
 - add integration tests / more unit tests
 - make labels a set, instead of an array on mongo, not sure if possible, otherwise solve in code
 
+# Improvement points since last assignment
+
+This assignment I tried to do more with middleware. The error handling and param middlewares. This way there should be less code duplication compared to last time.
+
 # How to run in Docker
 
 ```bash
