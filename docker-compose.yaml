@@ -1,0 +1,20 @@
+version: "3.1"
+
+services:
+  todo-list-service:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - GIN_MODE=release
+      - MONGO_URL=mongodb://mongo
+      - USE_MEMORY_MONGO=false
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
