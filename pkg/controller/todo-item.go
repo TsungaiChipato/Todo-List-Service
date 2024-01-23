@@ -95,6 +95,7 @@ func (con *TodoItemController) DeleteOneById(c *gin.Context) {
 	c.AbortWithStatus(http.StatusOK)
 }
 
+// FIXME: check if the todo item exists
 func (con *TodoItemController) UpdateByID(c *gin.Context) {
 	idString := c.GetString("id")
 	id, err := primitive.ObjectIDFromHex(idString)

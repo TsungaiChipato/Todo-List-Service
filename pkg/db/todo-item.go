@@ -107,7 +107,7 @@ func (h *TodoItemDbHandler) DeleteOneById(context context.Context, id primitive.
 }
 
 func (h *TodoItemDbHandler) UpdateOneById(context context.Context, id primitive.ObjectID, update *TodoItemDb) error {
-	_, err := h.coll.UpdateByID(context, id, update)
+	_, err := h.coll.UpdateByID(context, id, bson.M{"$set": update})
 	return err
 }
 
